@@ -1,11 +1,11 @@
-#head-less normal service .
+#head-less service .
 apiVersion : v1
 kind: Service
 metadata:
   name: mysql-headless
   namespace: expense
 spec:
-  clusterIP: None # for headless service cluster ip shouid be none.
+  clusterIP: None # for headless service there is no cluster ip 
   selector:
     project: expense
     component: mysql
@@ -15,7 +15,7 @@ spec:
     port: 3306 # service port
     targetPort: 3306 #container port
 ---
- #Service 
+ # normal Service 
 apiVersion : v1
 kind: Service
 metadata:
@@ -32,6 +32,7 @@ spec:
     port: 3306 # service port
     targetPort: 3306 #container port
 ---
+# statefull-set 
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
