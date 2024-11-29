@@ -55,7 +55,7 @@ spec:
     spec: 
       containers:
       - name: mysql
-        image: raidi/mysql
+        image: raidi/mysql:v1
         ports:
         - containerPort: 80
         volumeMounts:
